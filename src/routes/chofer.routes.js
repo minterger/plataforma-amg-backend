@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   createChofer,
   updateChofer,
-} from "../controllers/chofer.controllers.js";
+} from "../controllers/chofer.controller.js";
 import { decodeToken } from "../helpers/jsonwebtoken.js";
 
 const router = Router();

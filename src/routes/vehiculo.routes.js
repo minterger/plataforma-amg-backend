@@ -2,7 +2,7 @@ import {
   getVehiculos,
   createVehiculo,
   getVehiculo,
-} from "../controllers/vehiculo.controllers.js";
+} from "../controllers/vehiculo.controller.js";
 import { decodeToken } from "../helpers/jsonwebtoken.js";
 import { Router } from "express";
 

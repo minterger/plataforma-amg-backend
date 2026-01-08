@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   getContratoFlete,
   getContratoFleteIndex,
-} from "../controllers/index.controllers.js";
+} from "../controllers/index.controller.js";
 import { decodeToken } from "../helpers/jsonwebtoken.js";
 
 const route = Router();

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { register, login, getUser } from "../controllers/user.controllers.js";
+import { register, login, getUser } from "../controllers/user.controller.js";
 import { decodeToken } from "../helpers/jsonwebtoken.js";
 
 const route = Router();
