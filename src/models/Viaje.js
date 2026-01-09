@@ -20,11 +20,17 @@ const ViajeSchema = new Schema(
     },
     emp_contratada: { type: ObjectId, required: true, ref: "Empresa" },
     datos_unidad: {
-      placa_tractor: { type: ObjectId, required: true, ref: "Vehiculo" },
-      cambio_tractor: { type: ObjectId, ref: "Vehiculo" },
-      placa_semi: { type: ObjectId, required: true, ref: "Vehiculo" },
-      chofer: { type: ObjectId, required: true, ref: "Chofer" },
-      cambio_chofer: { type: ObjectId, ref: "Chofer" },
+      placa_tractor: { type: String, required: true },
+      cambio_tractor: { type: String },
+      placa_semi: { type: String, required: true },
+      chofer: {
+        nombre: { type: String, required: true },
+        dni: { type: String, required: true },
+      },
+      cambio_chofer: {
+        nombre: { type: String },
+        dni: { type: String },
+      },
     },
     contratacion: {
       valor: { type: Number, required: true },

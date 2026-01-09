@@ -7,8 +7,6 @@ import indexRouter from "./routes/index.routes.js";
 import empresaRouter from "./routes/empresa.routes.js";
 import userRouter from "./routes/user.routes.js";
 import viajesRouter from "./routes/viajes.routes.js";
-import vehiculoRouter from "./routes/vehiculo.routes.js";
-import choferRouter from "./routes/chofer.routes.js";
 
 import "./database.js";
 
@@ -32,8 +30,6 @@ app.use(indexRouter);
 app.use(empresaRouter);
 app.use(userRouter);
 app.use(viajesRouter);
-app.use(vehiculoRouter);
-app.use(choferRouter);
 
 // path publico
 app.use(express.static(path.join(__dirname, "public")));

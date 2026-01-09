@@ -43,9 +43,7 @@ export const getEmpresa = async (req, res) => {
   try {
     const { id, type } = req.params;
 
-    const empresa = await Empresa.findOne({ _id: id, type }).populate(
-      type === "transporte" ? "vehiculos choferes" : "viajes"
-    );
+    const empresa = await Empresa.findOne({ _id: id, type }).populate("viajes");
 
     if (empresa) {
       res.json(empresa);
