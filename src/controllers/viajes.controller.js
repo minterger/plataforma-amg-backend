@@ -26,7 +26,15 @@ export const getViajes = async (req, res) => {
 
 export const createViaje = async (req, res) => {
   try {
-    const viaje = new Viaje(req.body);
+    const viaje = new Viaje({
+      fechaInicio: req.body.fechaInicio,
+      fechaFinViaje: req.body.fechaFinViaje,
+      fechaRecepcion: req.body.fechaRecepcion,
+      fechaFacturacion: req.body.fechaFacturacion,
+      diasParaPago: req.body.diasParaPago,
+      mic: req.body.mic,
+      crt: req.body.crt,
+    });
     await viaje.save();
     res.status(201).json(viaje);
   } catch (error) {

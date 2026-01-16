@@ -14,6 +14,7 @@ const ViajeSchema = new Schema(
     diasParaPago: { type: Number },
     mic: { type: String },
     crt: { type: String },
+    remito: { type: String },
     datos_tafico: {
       origen: { type: String, required: true },
       destino: { type: String, required: true },
