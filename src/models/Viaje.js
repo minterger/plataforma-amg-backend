@@ -11,6 +11,7 @@ const ViajeSchema = new Schema(
     fechaFinViaje: { type: Date },
     fechaRecepcion: { type: Date },
     fechaFacturacion: { type: Date },
+    diasParaPago: { type: Number },
     mic: { type: String },
     crt: { type: String },
     datos_tafico: {
