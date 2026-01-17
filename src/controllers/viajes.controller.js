@@ -34,6 +34,13 @@ export const createViaje = async (req, res) => {
       diasParaPago: req.body.diasParaPago,
       mic: req.body.mic,
       crt: req.body.crt,
+      remito: req.body.remito,
+      datos_tafico: req.body.datos_tafico,
+      emp_contratada: req.body.emp_contratada,
+      datos_unidad: req.body.datos_unidad,
+      contratacion: req.body.contratacion,
+      recordatorios: req.body.recordatorios,
+      status: req.body.status,
     });
     await viaje.save();
     res.status(201).json(viaje);
