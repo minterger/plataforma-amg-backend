@@ -54,14 +54,21 @@ const generatePDF = ({
     30,
   );
 
+  if (n_camion && n_camion != 0) {
+    pdf.setFontSize(12);
+    pdf.setFont("Helvetica", "bold");
+    pdf.text("N° Camion:", 40, 50);
+    pdf.text(n_camion.toString(), 65, 50);
+  }
+
   pdf.setLineWidth(0.4);
   pdf.setDrawColor(0, 0, 0);
   pdf.line(20, 250, 70, 250);
   pdf.line(140, 250, 190, 250);
   pdf.setFontSize(8);
   pdf.setFont("Helvetica", "bold");
-  pdf.text("Firma Contratente", 45, 253, null, null, "center");
-  pdf.text("Firma Contratado", 165, 253, null, null, "center");
+  pdf.text("Firma Contratente", 45, 253, { align: "center" });
+  pdf.text("Firma Contratado", 165, 253, { align: "center" });
 
   pdf.setDrawColor(107, 107, 107);
   pdf.setLineWidth(0.7);
@@ -73,31 +80,26 @@ const generatePDF = ({
   pdf.line(127, 25, 188, 25);
   pdf.setFontSize(12);
   pdf.setFont("Helvetica", "bold");
-  pdf.text("CONTRATO DE FLETE", 157.5, 21.5, null, null, "center");
+  pdf.text("CONTRATO DE FLETE", 157.5, 21.5, { align: "center" });
 
   pdf.setFontSize(9);
-  pdf.text("TRANSPORTE AMG", 157.5, 35, null, null, "center");
+  pdf.text("TRANSPORTE AMG", 157.5, 35, { align: "center" });
 
   pdf.setFont("Helvetica", "normal");
   pdf.setFontSize(8);
-  pdf.text("Nueva y Santa Cruz S/N,", 157.5, 40, null, null, "center");
-  pdf.text("Ingeniero Giagnoni, Mendoza", 157.5, 43, null, null, "center");
-  pdf.text("Tel: +5492634715632", 157.5, 46, null, null, "center");
-  pdf.text(
-    "Mail: diegogonzalez@transporteamg.com.ar",
-    157.5,
-    49,
-    null,
-    null,
-    "center",
-  );
+  pdf.text("Nueva y Santa Cruz S/N,", 157.5, 40, { align: "center" });
+  pdf.text("Ingeniero Giagnoni, Mendoza", 157.5, 43, { align: "center" });
+  pdf.text("Tel: +5492634715632", 157.5, 46, { align: "center" });
+  pdf.text("Mail: diegogonzalez@transporteamg.com.ar", 157.5, 49, {
+    align: "center",
+  });
 
   pdf.line(10, 60, 200, 60);
   pdf.line(10, 70, 200, 70);
 
   pdf.setFontSize(10);
   pdf.text(date || fechaFormateada, 15, 66);
-  pdf.text(`Número de contrato: ${id}`, 195, 66, null, null, "right");
+  pdf.text(`Número de contrato: ${id}`, 195, 66, { align: "right" });
 
   //////////////////////////////////////////////////
 
@@ -156,7 +158,6 @@ const generatePDF = ({
   pdf.text("DNI:", 110, 128);
   if (n_camion && n_camion != 0) {
   }
-  pdf.text("Numero Camion:", 17, 10);
 
   //////////////////////////////////////////////////
 
@@ -178,9 +179,6 @@ const generatePDF = ({
   pdf.text(dni, 145, 128);
 
   // NUMERO CAMION NUESTRO
-  if (n_camion && n_camion != 0) {
-    pdf.text(n_camion.toString(), 55, 10);
-  }
 
   pdf.line(15, 130, 195, 130);
 
