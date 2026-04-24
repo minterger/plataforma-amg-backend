@@ -14,7 +14,7 @@ const generatePDF = ({
   date,
   datos_tafico: { origen, destino, mercaderia, crt, remito },
   emp_contratada: { empresa, id_tributaria },
-  datos_unidad: { placa_tractor, placa_semi, chofer, dni },
+  datos_unidad: { placa_tractor, placa_semi, chofer, dni, n_camion },
   datos_facturacion: { razon_facturacion, cuit_rut_facturacion },
   contratacion: { valor, moneda, condicion_pago },
   recordatorios,
@@ -51,7 +51,7 @@ const generatePDF = ({
     20,
     12,
     80,
-    30
+    30,
   );
 
   pdf.setLineWidth(0.4);
@@ -89,7 +89,7 @@ const generatePDF = ({
     49,
     null,
     null,
-    "center"
+    "center",
   );
 
   pdf.line(10, 60, 200, 60);
@@ -154,6 +154,9 @@ const generatePDF = ({
   pdf.text("PLACA SEMI:", 110, 123);
   pdf.text("CHOFER:", 17, 128);
   pdf.text("DNI:", 110, 128);
+  if (n_camion && n_camion != 0) {
+  }
+  pdf.text("Numero Camion:", 17, 10);
 
   //////////////////////////////////////////////////
 
@@ -173,6 +176,11 @@ const generatePDF = ({
   pdf.text(chofer, 55, 128);
   // PATENTE SEMI
   pdf.text(dni, 145, 128);
+
+  // NUMERO CAMION NUESTRO
+  if (n_camion && n_camion != 0) {
+    pdf.text(n_camion.toString(), 55, 10);
+  }
 
   pdf.line(15, 130, 195, 130);
 
@@ -226,7 +234,7 @@ const generatePDF = ({
       maxWidth: 176,
       align: "center",
     },
-    null
+    null,
   );
 
   pdf.line(15, 193, 195, 193);

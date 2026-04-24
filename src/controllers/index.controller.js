@@ -89,6 +89,7 @@ export const getContratoFlete = async (req, res) => {
       placa_semi: "AE472NL",
       chofer: "EMILIO MONTARDIT",
       dni: "26664021",
+      n_camion: 1,
     },
     contratacion: {
       valor: "1,800.00",
@@ -147,6 +148,7 @@ export const getContratoFleteIndex = async (req, res) => {
       placa_semi: req.body.patente_semi?.trim().toUpperCase(),
       chofer: req.body.chofer?.trim().toUpperCase(),
       dni: req.body.dni?.trim(),
+      n_camion: req.body.n_camion,
     },
     contratacion: {
       valor: req.body.valor
